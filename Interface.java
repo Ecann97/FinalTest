@@ -12,19 +12,20 @@ import javax.swing.Box;
 public class Interface {
 
 	private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_10;
+	private JTextField c1;
+	private JTextField c2;
+	private JTextField c3;
+	private JTextField e1;
+	private JTextField e2;
+	private JTextField e3;
+	private JTextField upperRange;
+	private JTextField lowerRange;
+	private JTextField d1;
+	private JTextField d2;
+	private JTextField d3;
 	private JLabel lblIntegral;
-
+	
+	static System s = new System();
 	/**
 	 * Launch the application.
 	 */
@@ -61,7 +62,7 @@ public class Interface {
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-			lblIntegral.setText(String.valueOf(1));
+			lblIntegral.setText(String.valueOf(s.integrand(c1.getText(), c2.getText(), c3.getText(), e1.getText(), e2.getText(), e3.getText(), d1.getText(), d2.getText(), d3.getText(), upperRange.getText(), lowerRange.getText())));
 			
 			}
 		});
@@ -71,18 +72,18 @@ public class Interface {
 		JButton btnReset = new JButton("Reset");
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textField.setText("");
-				textField_1.setText("");
-				textField_2.setText("");
-				textField_3.setText("");
-				textField_4.setText("");
-				textField_5.setText("");
-				textField_6.setText("");
-				textField_7.setText("");
-				textField_8.setText("");
-				textField_9.setText("");
-				textField_10.setText("");
-				
+				c1.setText("");
+				c2.setText("");
+				c3.setText("");
+				e1.setText("");
+				e2.setText("");
+				e3.setText("");
+				upperRange.setText("");
+				lowerRange.setText("");
+				d1.setText("");
+				d2.setText("");
+				d3.setText("");
+				lblIntegral.setText("");
 			}
 		});
 		btnReset.setBounds(335, 11, 89, 23);
@@ -100,20 +101,20 @@ public class Interface {
 		label_1.setBounds(231, 86, 29, 14);
 		frame.getContentPane().add(label_1);
 		
-		textField = new JTextField();
-		textField.setBounds(39, 83, 22, 20);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
+		c1 = new JTextField();
+		c1.setBounds(39, 83, 22, 20);
+		frame.getContentPane().add(c1);
+		c1.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(121, 83, 22, 20);
-		frame.getContentPane().add(textField_1);
+		c2 = new JTextField();
+		c2.setColumns(10);
+		c2.setBounds(121, 83, 22, 20);
+		frame.getContentPane().add(c2);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(199, 83, 22, 20);
-		frame.getContentPane().add(textField_2);
+		c3 = new JTextField();
+		c3.setColumns(10);
+		c3.setBounds(199, 83, 22, 20);
+		frame.getContentPane().add(c3);
 		
 		JLabel label_2 = new JLabel("+");
 		label_2.setBounds(96, 82, 8, 23);
@@ -123,20 +124,20 @@ public class Interface {
 		label_3.setBounds(174, 82, 8, 23);
 		frame.getContentPane().add(label_3);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(77, 66, 22, 20);
-		frame.getContentPane().add(textField_3);
-		textField_3.setColumns(10);
+		e1 = new JTextField();
+		e1.setBounds(77, 66, 22, 20);
+		frame.getContentPane().add(e1);
+		e1.setColumns(10);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(160, 66, 22, 20);
-		frame.getContentPane().add(textField_4);
+		e2 = new JTextField();
+		e2.setColumns(10);
+		e2.setBounds(160, 66, 22, 20);
+		frame.getContentPane().add(e2);
 		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(231, 66, 22, 20);
-		frame.getContentPane().add(textField_5);
+		e3 = new JTextField();
+		e3.setColumns(10);
+		e3.setBounds(231, 66, 22, 20);
+		frame.getContentPane().add(e3);
 		
 		JLabel lblUpperRange = new JLabel("Upper Range");
 		lblUpperRange.setBounds(10, 179, 89, 14);
@@ -146,30 +147,30 @@ public class Interface {
 		lblLowerRange.setBounds(10, 204, 89, 14);
 		frame.getContentPane().add(lblLowerRange);
 		
-		textField_6 = new JTextField();
-		textField_6.setBounds(121, 176, 86, 20);
-		frame.getContentPane().add(textField_6);
-		textField_6.setColumns(10);
+		upperRange = new JTextField();
+		upperRange.setBounds(121, 176, 86, 20);
+		frame.getContentPane().add(upperRange);
+		upperRange.setColumns(10);
 		
-		textField_7 = new JTextField();
-		textField_7.setColumns(10);
-		textField_7.setBounds(121, 201, 86, 20);
-		frame.getContentPane().add(textField_7);
+		lowerRange = new JTextField();
+		lowerRange.setColumns(10);
+		lowerRange.setBounds(121, 201, 86, 20);
+		frame.getContentPane().add(lowerRange);
 		
-		textField_8 = new JTextField();
-		textField_8.setBounds(57, 110, 29, 20);
-		frame.getContentPane().add(textField_8);
-		textField_8.setColumns(10);
+		d1 = new JTextField();
+		d1.setBounds(57, 110, 29, 20);
+		frame.getContentPane().add(d1);
+		d1.setColumns(10);
 		
-		textField_9 = new JTextField();
-		textField_9.setColumns(10);
-		textField_9.setBounds(141, 111, 29, 20);
-		frame.getContentPane().add(textField_9);
+		d2 = new JTextField();
+		d2.setColumns(10);
+		d2.setBounds(141, 111, 29, 20);
+		frame.getContentPane().add(d2);
 		
-		textField_10 = new JTextField();
-		textField_10.setColumns(10);
-		textField_10.setBounds(224, 111, 29, 20);
-		frame.getContentPane().add(textField_10);
+		d3 = new JTextField();
+		d3.setColumns(10);
+		d3.setBounds(224, 111, 29, 20);
+		frame.getContentPane().add(d3);
 		
 		lblIntegral = new JLabel("");
 		lblIntegral.setBounds(320, 179, 46, 14);
