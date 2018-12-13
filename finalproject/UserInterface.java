@@ -1,15 +1,14 @@
+package finalproject;
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JTextPane;
-import javax.swing.Box;
+import java.awt.event.ActionListener;
 
-public class Interface {
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class UserInterface {
 
 	private JFrame frame;
 	private JTextField c1;
@@ -25,7 +24,7 @@ public class Interface {
 	private JTextField d3;
 	private JLabel lblIntegral;
 	
-	static System s = new System();
+	Calculation s = new Calculation();
 	/**
 	 * Launch the application.
 	 */
@@ -33,7 +32,7 @@ public class Interface {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Interface window = new Interface();
+					UserInterface window = new UserInterface();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -45,7 +44,7 @@ public class Interface {
 	/**
 	 * Create the application.
 	 */
-	public Interface() {
+	public UserInterface() {
 		initialize();
 	}
 
@@ -61,8 +60,9 @@ public class Interface {
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-			lblIntegral.setText(String.valueOf(s.integrand(c1.getText(), c2.getText(), c3.getText(), e1.getText(), e2.getText(), e3.getText(), d1.getText(), d2.getText(), d3.getText(), upperRange.getText(), lowerRange.getText())));
+				String x = String.valueOf(s.integrand(c1.getText(), c2.getText(), c3.getText(), e1.getText(), e2.getText(), e3.getText(), d1.getText(), d2.getText(), d3.getText(), upperRange.getText(), lowerRange.getText()));
+		
+				lblIntegral.setText(x);
 			
 			}
 		});
